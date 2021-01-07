@@ -13,6 +13,19 @@ const Game = () => {
     }
   }).join(' ');
 
+  const [playerNumber, setPlayerNumber] = useState(1);
+  const [submissionList, setSubmissionList] = useState([]);
+
+  const addPlayerSubmission = submission => {
+    const newSubmissionList = [...submissionList];
+
+    newSubmissionList.push({submission});
+
+    setSubmissionList(newSubmissionList);
+    const nextPlayer = playerNumber + 1;
+    setPlayerNumber(nextPlayer);
+  };
+
   return (
     <div className="Game">
       <h2>Game</h2>
@@ -27,7 +40,7 @@ const Game = () => {
 
       <RecentSubmission />
 
-      <PlayerSubmissionForm />
+      <PlayerSubmissionForm index={playerNumber} sendSubmission={addPlayerSubmission} fields={FIELDS} />
 
       <FinalPoem />
 
