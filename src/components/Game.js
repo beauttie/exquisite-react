@@ -28,6 +28,10 @@ const Game = () => {
 
   const lastSubmission = submissionList.pop();
 
+  const revealPoem = () => {
+    setIsSubmitted(true);
+  }
+
   return (
     <div className="Game">
       <h2>Game</h2>
@@ -44,7 +48,7 @@ const Game = () => {
 
       <PlayerSubmissionForm index={playerNumber} sendSubmission={addPlayerSubmission} fields={FIELDS} />
 
-      <FinalPoem isSubmitted={isSubmitted} submission={submissionList} />
+      <FinalPoem isSubmitted={isSubmitted} submission={submissionList} revealPoem={revealPoem} />
 
     </div>
   );

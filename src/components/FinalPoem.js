@@ -4,6 +4,10 @@ import './FinalPoem.css';
 
 const FinalPoem = (props) => {
 
+  const onButtonClick = () => {
+    props.revealPoem();
+  };
+
   return (
     <div className="FinalPoem">
       <section className="FinalPoem__poem">
@@ -12,7 +16,7 @@ const FinalPoem = (props) => {
       </section>
 
       <div className="FinalPoem__reveal-btn-container">
-        <input type="button" value="We are finished: Reveal the Poem" className="FinalPoem__reveal-btn" onClick={props.revealPoem} />
+        <input type="button" value="We are finished: Reveal the Poem" className="FinalPoem__reveal-btn" onClick={onButtonClick} />
       </div>
     </div>
   );
