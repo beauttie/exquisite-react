@@ -15,16 +15,18 @@ const Game = () => {
 
   const [playerNumber, setPlayerNumber] = useState(1);
   const [submissionList, setSubmissionList] = useState([]);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const addPlayerSubmission = submission => {
     const newSubmissionList = [...submissionList];
 
-    newSubmissionList.push({submission});
+    newSubmissionList.push(submission);
 
     setSubmissionList(newSubmissionList);
-    const nextPlayer = playerNumber + 1;
-    setPlayerNumber(nextPlayer);
+    setPlayerNumber(playerNumber + 1);
   };
+
+  const lastSubmission = submissionList.pop();
 
   return (
     <div className="Game">
@@ -38,11 +40,11 @@ const Game = () => {
         { exampleFormat }
       </p>
 
-      <RecentSubmission />
+      <RecentSubmission submission={lastSubmission}/>
 
       <PlayerSubmissionForm index={playerNumber} sendSubmission={addPlayerSubmission} fields={FIELDS} />
 
-      <FinalPoem />
+      <FinalPoem isSubmitted={isSubmitted} submission={submissionList} />
 
     </div>
   );
