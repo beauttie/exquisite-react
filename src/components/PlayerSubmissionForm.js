@@ -70,8 +70,7 @@ const PlayerSubmissionForm = (props) => {
     <div className="PlayerSubmissionForm">
       <h3>Player Submission Form for Player #{ props.index }</h3>
 
-      <form className="PlayerSubmissionForm__form"
-            onSubmit={onFormSubmit} >
+      <form className="PlayerSubmissionForm__form" onSubmit={onFormSubmit} >
 
         <div className="PlayerSubmissionForm__poem-inputs">
           {generateFormFields}
