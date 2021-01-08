@@ -51,16 +51,16 @@ const PlayerSubmissionForm = (props) => {
 
   const generateFormFields = props.fields.map(field => {
     if (field.key) {
-      return <input 
+      return (<input 
               key={field.key}
               className={formFields[field.key] === '' ? '.PlayerSubmissionFormt__input--invalid' : ''}
               name={field.key}
               value={formFields[field.key] || ''}
               onChange={onInputChange}
               placeholder={field.placeholder}
-              type="text" />
+              type="text" />);
     } else {
-      return field
+      return field;
     }
   });
   
