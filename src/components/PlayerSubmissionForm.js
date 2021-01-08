@@ -53,7 +53,7 @@ const PlayerSubmissionForm = (props) => {
     if (field.key) {
       return (<input 
               key={field.key}
-              className={formFields[field.key] === '' ? '.PlayerSubmissionFormt__input--invalid' : ''}
+              className={formFields[field.key] === '' ? 'PlayerSubmissionFormt__input--invalid' : ''}
               name={field.key}
               value={formFields[field.key] || ''}
               onChange={onInputChange}
