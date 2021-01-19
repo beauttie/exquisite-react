@@ -44,9 +44,9 @@ const Game = () => {
         { exampleFormat }
       </p>
 
-      {(!isSubmitted && submissionList.length > 0) ? <RecentSubmission submission={lastSubmission}/> : null}
+      {(!isSubmitted && submissionList.length > 0) ? <RecentSubmission submission={lastSubmission}/> : ''}
 
-      {(!isSubmitted) ? <PlayerSubmissionForm index={playerNumber} sendSubmission={addPlayerSubmission} fields={FIELDS} /> : null}
+      {(!isSubmitted) ? <PlayerSubmissionForm index={playerNumber} sendSubmission={addPlayerSubmission} fields={FIELDS} /> : ''}
 
       <FinalPoem isSubmitted={isSubmitted} submissions={submissionList} revealPoem={revealPoem} />
 
